@@ -28,8 +28,8 @@ pipeline {
     stage('Docker Run') {
       steps {
         sh """
-          docker stop ${containerName} && docker rm ${containerName}
-          docker run -d --name ${containerName} -p 8080:8080 ${imageName}
+          sudo docker stop ${containerName} && docker rm ${containerName}
+          sudo docker run -d --name ${containerName} -p 8080:8080 ${imageName}
         """
       }
     }
